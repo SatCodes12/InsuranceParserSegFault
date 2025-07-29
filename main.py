@@ -61,9 +61,6 @@ def process_doc(request: QueryRequest, authorization: str = Header(...)):
     answers = generate_structured_answers(request.questions, vectordb)
 
     return {
-        "status": "Success",
-        "doc_type": file_type,
-        "total_chunks": len(chunks),
         "answers": answers
     }
 

@@ -9,9 +9,9 @@ INSURANCE_PROMPT_TEMPLATE = """
 You are an intelligent insurance parser.
 
 Answer the following insurance-related question professionally and clearly.
-Answer in a single line in brief but use citations
+Answer in a single line in a short and concise form taken from relevant clauses. However do not mention these clauses in the answe
 
-Relevant parts:
+Relevant clauses:
 {context}
 
 Question:
@@ -29,10 +29,13 @@ def generate_structured_output(query, clauses):
     ])
     prompt = INSURANCE_PROMPT_TEMPLATE.format(query=query, context=context)
     
-    response = genai_client.models.generate_content(
-        model="gemini-2.5-flash",
-        contents=prompt
-    )
+    try:
+        response = genai_client.models.generate_content(
+            model="gemini-2.5-flash",
+            contents=prompt
+        )
+    except Exception as e:
+        return f"Error: Failed to generate response for query '{query}': {str(e)}"
 
     return response.text.strip()
 
