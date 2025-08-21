@@ -133,6 +133,14 @@ BEARER_TOKEN=your_bearer_token
 }
 </code></pre>
 
+<h2>Contributors</h2>
+
+<p>
+  Contributors: 
+  <a href="https://github.com/Nirjhar-Kheto" target="_blank">Nirjhar Kheto</a>, 
+  <a href="https://github.com/arkodasgupta0412" target="_blank">Arko Dasgupta</a>
+</p>
+
 <h2>Repository</h2>
 
 <p>
